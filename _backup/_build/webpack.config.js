@@ -52,6 +52,7 @@ module.exports = function(env, argv) {
 
       new CopyWebpackPlugin([
         { from: '../src/assets/**/*', to: '../', context: "../src" },
+        { from: "../src/*.html", to: "../", context: "../src/" }
       ]),
 
       ...this.productionPlugins

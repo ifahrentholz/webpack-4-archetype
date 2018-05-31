@@ -7,6 +7,7 @@ $color2: #f5aa2f;
 
 html, body {
   margin: 0;
+  height: 100vh;
   background: linear-gradient($color1, $color2);
 }
 
