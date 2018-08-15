@@ -10,7 +10,11 @@ export default (env, argv) => {
   return webpackMerge({
     devtool: "source-map",
     output: {
-      path: path.resolve(__dirname, "dist/"),
+      path: path.resolve(__dirname, "dist"),
+      filename: "[name]"
+    },
+    devServer: {
+      contentBase: "./dist"
     }
   },
     handleClean(),

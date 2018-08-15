@@ -1,34 +1,27 @@
-import MiniCssExtractPlugin, { loader as _loader } from "mini-css-extract-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export default () => ({
-  entry: [
-    "./src/index.scss"
-  ],
+  entry: {
+    "./static/css/index": "./src/index.scss"
+  },
   plugins: [
-    // Create a [name].css file in filesystem
     new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css",
-    }),
+    })
   ],
   module: {
-    rules: [{
-      test: /\.scss$/,
-      use: [
-        _loader, {
-          loader: "css-loader",
-          options: {
-            minimize: false,
-            sourceMap: true
-          }
-        },
-        {
-          loader: "sass-loader",
-          options: {
-            sourceMap: true
-          }
-        },
-      ]
-    }]
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      }
+    ]
   }
 });
