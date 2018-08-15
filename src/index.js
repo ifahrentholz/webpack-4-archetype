@@ -1,8 +1,7 @@
-import $ from 'jquery';
+import Greeting from './components/greeting/Greeting';
 
-// on ready do something
-$(() => {
-  $("body").css({
-    backgroundColor: '#000'
-  });
+const greet = new Greeting({
+  name: "Ingo"
 });
+
+greet.cheers();
