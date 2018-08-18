@@ -1,7 +1,6 @@
-import Greeting from './components/greeting/Greeting';
+import $ from "jquery";
+import Carousel from "./components/Carousel/Carousel";
 
-const greet = new Greeting({
-  name: "Ingo"
+$(() => {
+  Carousel();
 });
-
-greet.cheers();
