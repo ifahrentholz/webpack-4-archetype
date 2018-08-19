@@ -1,10 +1,10 @@
-import HtmlWEbpackPlugin from 'html-webpack-plugin';
+import HtmlWEbpackPlugin from "html-webpack-plugin";
 
 export default () => ({
   plugins: [
     new HtmlWEbpackPlugin({
-      template: "./src/index.html",
+      template: "./src/index.hbs",
       filename: "index.html"
     })
   ]
-})
+});
